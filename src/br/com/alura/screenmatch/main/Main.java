@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.main;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodio;
@@ -8,10 +10,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Movie meuFilme = new Movie();
+        Movie meuFilme = new Movie("O poderoso chefão", 1970);
 
-        meuFilme.setNome("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
         meuFilme.setDuracaoEmMinutos(180);
         System.out.println("Duração do Filme: " + meuFilme.getDuracaoEmMinutos());
 
@@ -21,12 +21,8 @@ public class Main {
         meuFilme.avalia(10);
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
-        //meuFilme.somaDasAvaliacoes = 10;
-        //meuFilme.totalDeAvaliacoes = 1;
-        //System.out.println(meuFilme.pegaMedia());
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+
+        Serie lost = new Serie("Lost", 2000);
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
         lost.exibeFichaTecnica();
@@ -34,10 +30,8 @@ public class Main {
 
         System.out.println("Duração para maratonar Lost: " + lost.getDuracaoEmMinutos());
 
-        Movie outroFilme = new Movie();
+        Movie outroFilme = new Movie("Avatar", 2023 );
 
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
         outroFilme.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -56,10 +50,8 @@ public class Main {
 
         filtro.filtra(episodio);
 
-        var filmedoPaulo = new Movie();
+        var filmedoPaulo = new Movie("DogVille", 2003);
         filmedoPaulo.setDuracaoEmMinutos(200);
-        filmedoPaulo.setNome("DogVille");
-        filmedoPaulo.setAnoDeLancamento(2003);
         filmedoPaulo.avalia(10);
 
         ArrayList<Movie> listaDeFilmes = new ArrayList<>();
@@ -70,9 +62,7 @@ public class Main {
 
         System.out.println(listaDeFilmes);
 
-        for (Movie listaDeFilme : listaDeFilmes) {
-            System.out.println(listaDeFilme.getNome());
-        }
+
 
     }
 }
